@@ -1,37 +1,15 @@
 # Python3 in Wine in Docker
 
-![License](https://img.shields.io/github/license/webcomics/pywine)
-![Maintenance](https://img.shields.io/maintenance/yes/2023)
-![Docker Image Size](https://img.shields.io/docker/image-size/tobix/pywine/latest)
+## Passo a Passo para criar um executavel
 
-This is a docker container to help building Python applications in Wine. It
-installs Python and PyInstaller to be able to build "native" Windows
-applications. It also installs UPX, so PyInstaller can use it to compress
-binaries.
+1. Crie uma arquivo na raiz do projeto com o nome `script.py`
+2. Cole seu código que vai virar um executavel
 
-Since Python 3.9, this uses the 64-bit version of Python, since that is the
-default download from python.org. If you need a different version, please use
-one of the tags described [below](#older-python-versions).
+3. Abra o terminal na pasta do projeto e rode o comando
 
-This dockerfile does some umask trickery to create a wineprefix usable by any
-user. This makes it convinient to use from a Jenkins build, since those often
-use a non-root user inside the container. Unfortunatly, wine doesn't like to
-use a wineprefix not owned by the current user. If you want to use the "global"
-wineprefix from another user, you can source the `/opt/mkuserwineprefix` script
-to create an "usable" wineprefix:
+` ./create-exe.sh `
 
-```sh
-  . /opt/mkuserwineprefix
-```
+Pronto seu arquivo exe está pronto :)
 
-## Older Python versions
-
-If you need older Python versions for some reason, there are currently tags for
-the following Python branches:
-
- * Python 3.11.x: `tobix/pywine:3.11`
- * Python 3.10.x: `tobix/pywine:3.10`
-
-Older branches might be out-of-date. Please create an
-[issue](https://github.com/webcomics/pywine/issues/new/choose) if you need any
-updates.
+Caso queira fazer uma aquivo para sistema operacional 32 bits 
+é só ir em ` create-exe.sh ` e seguir as instruções

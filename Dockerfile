@@ -35,3 +35,5 @@ RUN umask 0 && xvfb-run sh -c "\
   wine pip install --no-warn-script-location pyinstaller; \
   wineserver -w"
 
+COPY script.py /opt
+
