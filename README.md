@@ -10,6 +10,3 @@
 ` ./create-exe.sh `
 
 Pronto seu arquivo exe está pronto :)
-
-Caso queira fazer uma aquivo para sistema operacional 32 bits 
-é só ir em ` create-exe.sh ` e seguir as instruções
